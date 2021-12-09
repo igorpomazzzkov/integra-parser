@@ -33,7 +33,7 @@ from psycopg2 import errors
 def get_brands_article_with_tecdoc_id():
     cursor = connection.cursor()
     cursor.execute(
-        """SELECT id, brand, tecdoc_id FROM brands_article WHERE tecdoc_id IS NOT NULL AND ID NOT IN(1, 2, 3, 4) ORDER BY brand""")
+        """SELECT id, brand, tecdoc_id FROM brands_article WHERE tecdoc_id IS NOT NULL AND ID NOT IN(1, 2, 3, 4) ORDER BY ID""")
     result = cursor.fetchall()
     cursor.close()
     connection.commit()

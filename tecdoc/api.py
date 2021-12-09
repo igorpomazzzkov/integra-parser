@@ -23,5 +23,4 @@ def get_motor_ids(lang: str, provider: int, country: str, manu_id: int):
         'manuId': manu_id,
         'country': country
     }
-    response = requests.get(base_url + 'motors/ids', params=param, headers=header)
-    return response.json()
+    return requests.get(base_url + 'motors/ids', params=param, headers=header)
